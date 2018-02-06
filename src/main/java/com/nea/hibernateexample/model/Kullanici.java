@@ -21,7 +21,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="kullanici")
-public class Kullanici {
+public class Kullanici extends BaseEntity{
     @Id
     @Column
     @SequenceGenerator(name = "seq_kullanici_id", allocationSize = 1, sequenceName = "seq_kullanici_id")

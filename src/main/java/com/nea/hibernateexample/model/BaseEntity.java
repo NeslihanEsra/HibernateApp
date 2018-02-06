@@ -5,7 +5,7 @@
  */
 package com.nea.hibernateexample.model;
 
-import java.sql.Date;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
@@ -35,7 +35,6 @@ public abstract class BaseEntity {
         this.ekleyen = ekleyen;
     }
 
-    
     public String getGuncelleyen() {
         return guncelleyen;
     }

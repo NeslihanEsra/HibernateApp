@@ -5,6 +5,9 @@
  */
 package com.nea.hibernateexample.db;
 
+import com.nea.hibernateexample.model.BaseEntity;
+import java.util.Date;
+
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -17,6 +20,11 @@ import org.hibernate.Transaction;
 public class BaseService {
 
     public Object insert(Object object) {
+        if(object instanceof BaseEntity){
+            BaseEntity baseEntity = (BaseEntity)object;
+            baseEntity.setGuncelleyen("test");
+            baseEntity.setGuncellemeTarihi(new Date());
+        }
         Session session = getSession();
         Transaction transaction = session.beginTransaction();
         session.save(object);
@@ -26,6 +34,11 @@ public class BaseService {
     }
 
     public Object update(Object object) {
+        if (object instanceof BaseEntity) {
+            BaseEntity baseEntity = (BaseEntity) object;
+            baseEntity.setGuncelleyen("test");
+            baseEntity.setGuncellemeTarihi(new Date());
+        }
         Session session = getSession();
         Transaction transaction = session.beginTransaction();
         session.update(object);
