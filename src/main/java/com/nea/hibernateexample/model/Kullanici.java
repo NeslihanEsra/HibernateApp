@@ -5,7 +5,6 @@
  */
 package com.nea.hibernateexample.model;
 
-import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -91,7 +90,10 @@ public class Kullanici extends BaseEntity{
     public void setAdres(String adres) {
         this.adres = adres;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Kullanici{" + "id=" + id + ", ad=" + ad + ", soyad=" + soyad + ", kullaniciAdi=" + kullaniciAdi + ", sifre=" + sifre + ", email=" + email + ", tel=" + tel + ", adres=" + adres + '}';
+    }
     
 }
